@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Library Box | Comentários</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Literata:opsz,wght@7..72,600;7..72,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/parte1/styles.css">
+</head>
+<body>
+  <div class="video-fundo" aria-hidden="true"><video src="/parte1/background.mp4" autoplay muted loop playsinline preload="metadata"></video></div>
+  <header class="topo">
+    <a class="marca" href="/parte1/"><span class="marca-icone"><img src="/parte1/logo-library-box-icon.png" alt=""></span><span>Library Box</span></a>
+    <nav class="menu"><a href="/parte1/">Principal</a><a href="/reservas.html">Reservas</a><a class="menu-destaque" href="/" id="loginLink">Entrar</a></nav>
+  </header>
+  <main>
+    <section class="secao comentarios-secao">
+      <div class="secao-cabecalho">
+        <h2>Comentários e avaliações</h2>
+        <p>Curta, favorite, avalie e comente livros com dados salvos no MySQL.</p>
+      </div>
+      <div class="comentarios-grid">
+        <form class="cartao-reserva comentario-form" id="comentarioForm">
+          <h3>Comentar leitura</h3>
+          <label for="livro">Livro</label>
+          <select id="livro"></select>
+          <label for="rating">Avaliação</label>
+          <select id="rating">
+            <option value="">Sem avaliação</option>
+            <option value="1">1 estrela</option>
+            <option value="2">2 estrelas</option>
+            <option value="3">3 estrelas</option>
+            <option value="4">4 estrelas</option>
+            <option value="5">5 estrelas</option>
+          </select>
+          <label for="message">Comentário</label>
+          <textarea id="message" maxlength="255"></textarea>
+          <div class="acoes-comentario">
+            <button class="botao primario" type="submit">Publicar</button>
+            <button class="botao secundario" id="likeBtn" type="button">Curtir</button>
+            <button class="botao secundario" id="favBtn" type="button">Favoritar</button>
+          </div>
+          <p class="mensagem" id="comentarioMensagem">Escolha uma leitura.</p>
+        </form>
+        <div class="reviews-lista" id="comentariosLista"></div>
+      </div>
+    </section>
+  </main>
+  <script src="comentarios.js"></script>
+</body>
+</html>

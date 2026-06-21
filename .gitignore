@@ -1,0 +1,9 @@
+node_modules/
+.env
+*.rar
+*.zip
+*.7z
+*.log
+.DS_Store
+Thumbs.db
+roteiro-video.html

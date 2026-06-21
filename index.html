@@ -33,7 +33,12 @@
       <a href="#acervo">Acervo</a>
       <a href="#funciona">Retirada</a>
       <a href="#comunidade">Mural</a>
-      <a class="menu-destaque" href="#reserva">Ver acervo</a>
+      <a href="/reservas.html">Reservar</a>
+      <a href="/comentarios.html">Comentários</a>
+      <a href="/rankings.html">Rankings</a>
+      <a href="/cadastro.html">Cadastro</a>
+      <a class="menu-destaque" href="/" id="loginLink">Entrar</a>
+      <button class="menu-destaque usuario-chip escondido" type="button" id="logoutBtn">Sair</button>
     </nav>
   </header>
 
@@ -95,8 +100,8 @@
 
     <section class="secao" id="acervo">
       <div class="secao-cabecalho">
-        <h2>Mesa de escolhas</h2>
-        <p>Uma seleção curta, como aqueles livros deixados na entrada da biblioteca para chamar atenção.</p>
+        <h2>Destaques</h2>
+        <p>Livros em evidência no acervo da biblioteca.</p>
       </div>
 
       <div class="filtros" aria-label="Filtros de livros">
@@ -106,7 +111,7 @@
         <button type="button" data-filtro="infantil">Infantil</button>
       </div>
 
-      <div class="grade-livros">
+      <div class="grade-livros" id="gradeLivros">
         <article class="card-livro revelar" data-categoria="literatura" data-titulo="Casa de Vento">
           <div class="capa capa-terracota">
             <span>Romance</span>
@@ -160,10 +165,10 @@
     <section class="secao mural-leitura" id="comunidade">
       <div class="secao-cabecalho">
         <h2>Mural dos leitores</h2>
-        <p>Recados rápidos da biblioteca para deixar a página com cara de espaço usado pela comunidade.</p>
+        <p>Avisos e novidades para quem acompanha a biblioteca.</p>
       </div>
 
-      <div class="notas-mural">
+      <div class="notas-mural" id="notasMural">
         <article class="nota revelar">
           <span>Indicação</span>
           <p>“Pegue um livro curto se estiver voltando ao hábito de leitura.”</p>
@@ -179,157 +184,52 @@
       </div>
     </section>
 
-    <section class="secao ranking-reviews">
-      <div class="ranking-bloco revelar">
-        <div class="secao-cabecalho compacto">
-          <h2>Mais reservados</h2>
-          <p>Os livros que mais chamaram atenção dos leitores nos últimos dias.</p>
-        </div>
-
-        <div class="ranking-lista" aria-label="Ranking de livros mais reservados">
-          <article>
-            <span>01</span>
-            <div>
-              <h3>Mapa do Rio</h3>
-              <p>12 reservas</p>
-            </div>
-            <b style="--valor: 92%"></b>
-          </article>
-          <article>
-            <span>02</span>
-            <div>
-              <h3>Ciência em Casa</h3>
-              <p>9 reservas</p>
-            </div>
-            <b style="--valor: 74%"></b>
-          </article>
-          <article>
-            <span>03</span>
-            <div>
-              <h3>Casa de Vento</h3>
-              <p>7 reservas</p>
-            </div>
-            <b style="--valor: 58%"></b>
-          </article>
-          <article>
-            <span>04</span>
-            <div>
-              <h3>O Jardim Secreto</h3>
-              <p>5 reservas</p>
-            </div>
-            <b style="--valor: 42%"></b>
-          </article>
-        </div>
-      </div>
-
-      <div class="reviews-bloco revelar">
-        <div class="secao-cabecalho compacto">
-          <h2>Opiniões rápidas</h2>
-          <p>Comentários curtos para ajudar outros alunos a escolherem uma leitura.</p>
-        </div>
-
-        <div class="reviews-lista">
-          <article>
-            <strong>“Gostei porque os capítulos são curtos e a história prende.”</strong>
-            <span>Lucas sobre Mapa do Rio</span>
-          </article>
-          <article>
-            <strong>“Usei para uma pesquisa de ciências e entendi melhor os experimentos.”</strong>
-            <span>Ana sobre Ciência em Casa</span>
-          </article>
-          <article>
-            <strong>“É um livro tranquilo para ler no intervalo.”</strong>
-            <span>Marina sobre Casa de Vento</span>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="secao experiencia" aria-label="Prateleira interativa">
-      <div class="experiencia-texto revelar">
-        <h2>Prateleira interativa</h2>
-        <p>
-          Passe pela estante, escolha uma obra e veja o livro ganhar destaque
-          no catálogo. A ideia é deixar a busca mais próxima da experiência de
-          caminhar entre as prateleiras.
-        </p>
-        <div class="contador-acervo">
-          <strong id="contador">4</strong>
-          <span>livros aparecendo no filtro atual</span>
-        </div>
-      </div>
-
-      <div class="estante-3d revelar" aria-label="Livros em perspectiva">
-        <button class="livro-3d ativo" type="button" data-destaque="Mapa do Rio" data-genero="Aventuras">
-          <span>Mapa<br>do Rio</span>
-        </button>
-        <button class="livro-3d" type="button" data-destaque="Casa de Vento" data-genero="Romance">
-          <span>Casa<br>de Vento</span>
-        </button>
-        <button class="livro-3d" type="button" data-destaque="Ciência em Casa" data-genero="Pesquisa">
-          <span>Ciência<br>em Casa</span>
-        </button>
-        <button class="livro-3d" type="button" data-destaque="O Jardim Secreto" data-genero="Infantil">
-          <span>Jardim<br>Secreto</span>
-        </button>
-        <div class="prateleira-base"></div>
-        <p class="destaque-selecionado">Destaque escolhido: <strong>Mapa do Rio</strong></p>
-      </div>
-    </section>
-
     <section class="secao funcionamento" id="funciona">
       <div class="secao-cabecalho">
-        <h2>Caminho até a retirada</h2>
-        <p>Escolher um livro pode ser rápido: encontre a obra, confira a disponibilidade e combine a retirada.</p>
+        <h2>Retirada</h2>
+        <p>Consulte o acervo, faça a reserva e retire no balcão da biblioteca.</p>
       </div>
 
       <div class="passos">
         <article>
           <span>01</span>
-          <h3>Olhe a mesa</h3>
-          <p>O aluno consulta a vitrine e identifica disponibilidade, gênero e informações básicas.</p>
+          <h3>Veja os destaques</h3>
+          <p>Veja os livros disponíveis e escolha a próxima leitura.</p>
         </article>
         <article>
           <span>02</span>
           <h3>Solicite a reserva</h3>
-          <p>Se a obra estiver disponível, o aluno pode pedir a separação para retirada.</p>
+          <p>Use a página de reservas para separar o livro.</p>
         </article>
         <article>
           <span>03</span>
           <h3>Retire no balcão</h3>
-          <p>Depois da confirmação, basta passar na biblioteca e pegar o livro reservado.</p>
+          <p>Passe na biblioteca e finalize a retirada.</p>
         </article>
       </div>
     </section>
 
     <section class="secao comunidade">
       <div class="texto-comunidade">
-        <h2>Comunidade leitora</h2>
+        <h2>Comunidade</h2>
         <p>
-          A Library Box ajuda a biblioteca a ficar mais presente na rotina da escola.
-          Com livros em destaque, filtros e sugestões, fica mais fácil descobrir
-          obras que talvez passassem despercebidas nas prateleiras.
+          A Library Box reúne leitores, avisos e livros em um só lugar.
         </p>
         <ul>
-          <li>Indicações para diferentes tipos de leitores.</li>
-          <li>Consulta rápida por gênero e disponibilidade.</li>
-          <li>Experiência simples para alunos e responsáveis pela biblioteca.</li>
+          <li id="totalLivrosInfo">Indicações para diferentes tipos de leitores.</li>
+          <li id="totalUsuariosInfo">Consulta rápida por gênero e disponibilidade.</li>
+          <li>Reservas, favoritos e avaliações conectados ao login.</li>
         </ul>
       </div>
 
       <div class="cartao-reserva" id="reserva">
-        <h3>Reserve sua leitura</h3>
-        <p>Escolha uma obra e deixe sua retirada combinada com a biblioteca.</p>
-        <label for="livro">Livro</label>
-        <select id="livro">
-          <option>Casa de Vento</option>
-          <option>Ciência em Casa</option>
-          <option>O Jardim Secreto</option>
-        </select>
-        <button class="botao primario" type="button" id="reservar">Reservar livro</button>
-        <p class="mensagem" aria-live="polite">Escolha um livro para continuar.</p>
+        <h3>Área do leitor</h3>
+        <p>As ações principais ficam em páginas separadas para cada fluxo ficar mais claro.</p>
+        <a class="botao primario" href="/reservas.html">Reservar livro</a>
+        <a class="botao secundario acao-card" href="/comentarios.html">Comentar e avaliar</a>
       </div>
     </section>
+
   </main>
 
   <footer class="rodape">
